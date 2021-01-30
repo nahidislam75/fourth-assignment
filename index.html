@@ -61,9 +61,8 @@
                     <input id="first-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button onclick="updatingTicketNumber(true,'first')">+</button>
-                    <button onclick="updatingTicketNumber(false,'first')">-</button>
-                    <!--<p>+ -</p>-->
+                    <button class="for-buttons" onclick="updatingTicketNumber(true,'first')">+</button>
+                    <button class="for-buttons" onclick="updatingTicketNumber(false,'first')">-</button>
                 </div>
             </div>
             
@@ -73,9 +72,8 @@
                     <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                   <button onclick="updatingTicketNumber(true,'economy')" >+</button>
-                   <button onclick="updatingTicketNumber(false,'economy')">-</button>
-                   <!--<p> <span id="economy-increase">+</span> <span>-</span> </p>-->
+                   <button class="for-buttons" onclick="updatingTicketNumber(true,'economy')" >+</button>
+                   <button class="for-buttons" onclick="updatingTicketNumber(false,'economy')">-</button>
                 </div>
             </div>
             <div class="calculations">
@@ -106,35 +104,11 @@
                     </div>
                 </div>
             </div>
-            <button onclick="alert('you will need money')" class="btn-style">Book Now</button>
+            <button onclick="alert('Are you sure to buy tickets? This will cost you some money. If you sure to buy tickets then press ok .')" class="btn-style">Book Now</button>
         </div>
     </main>
     <script>
-        // document.getElementById('economy-increase').addEventListener('click',function(){
-        //     updatingTicketNumber();
-        //     // const economyInput = document.getElementById('economy-count');
-        //     // const economyCount = parseInt(economyInput.value);
-        //     // const economyNewCount = economyCount + 1;
-        //     // economyInput.value=economyNewCount;
-        // });
-        // document.getElementById('economy-decrease').addEventListener('click',function(){
-        //     const economyInput = document.getElementById('economy-count');
-        //     const economyCount = parseInt(economyInput.value);
-        //     const economyNewCount = economyCount - 1;
-        //     economyInput.value=economyNewCount;
-        // });
-        // document.getElementById('first-increase').addEventListener('click',function(){
-        //     const firstInput = document.getElementById('first-count');
-        //     const firstCount = parseInt(firstInput.value);
-        //     const firstNewCount = firstCount + 1;
-        //     firstInput.value=firstNewCount;
-        // });
-        // document.getElementById('first-decrease').addEventListener('click',function(){
-        //     const firstInput = document.getElementById('first-count');
-        //     const firstCount = parseInt(firstInput.value);
-        //     const firstNewCount = firstCount - 1;
-        //     firstInput.value=firstNewCount;
-        // });
+        // function for counting tickets for input field
         function updatingTicketNumber(isIncrease,ticketType)
         {
             const ticketInput = document.getElementById(ticketType+'-count');
@@ -151,6 +125,9 @@
             ticketInput.value= ticketNewCount;
             gettotal();
         }
+
+
+        //function for counting total
         function gettotal()
         {
             const firstTickets = getTicketAmount('first');
@@ -166,6 +143,9 @@
             document.getElementById('all-total').innerText='$'+allTotal;
 
         }
+
+
+        //function for counting tickrts number for find total
         function getTicketAmount(ticketType)
         {
             const ticketInput =document.getElementById(ticketType+'-count');
